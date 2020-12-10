@@ -21,7 +21,22 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
         super.onViewCreated(view, savedInstanceState)
 
         view.apply {
-            findViewById<TextView>(R.id.textview_first).text = getRequestMovies()
+            findViewById<TextView>(R.id.textview_first).apply {
+
+                DataLoader.getRequestForMovies(object :FutureCallbackMovieBridge{
+                    override fun onResponse(response: MovieInfoModel) {
+                        d("dsfsfdf",response.toString())
+                        text = response.toString()
+                    }
+
+                    override fun onFailure(error: String) {
+                        d("dsfsfdf",error.toString())
+                        text = error
+                    }
+
+                })
+
+            }
 
 
         }
@@ -32,21 +47,7 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
     }
 
     private fun getRequestMovies():String{
-        var data = ""
-        DataLoader.getRequestForMovies(object :FutureCallbackMovieBridge{
-            override fun onResponse(response: MovieInfoModel) {
-               d("dsfsfdf",response.toString())
-                Thread.sleep(2000)
-                data = response.toString()
-            }
-
-            override fun onFailure(error: String) {
-                Thread.sleep(2000)
-                d("dsfsfdf",error.toString())
-            data = error
-            }
-
-        })
+        var data = "gdg  "
 
         return data + "sffsfd"
     }
