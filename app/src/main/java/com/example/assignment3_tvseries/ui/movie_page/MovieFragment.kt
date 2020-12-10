@@ -1,14 +1,13 @@
-package com.example.assignment3_tvseries
+package com.example.assignment3_tvseries.ui.movie_page
 
 import android.os.Bundle
 import android.util.Log.d
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
+import com.example.assignment3_tvseries.R
 import com.example.assignment3_tvseries.data_base_network.DataLoader
 import com.example.assignment3_tvseries.data_base_network.FutureCallbackMovieBridge
 import com.example.assignment3_tvseries.data_base_network.model.MovieInfoModel

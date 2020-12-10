@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/MovieFragment"
-        android:name="com.example.assignment3_tvseries.MovieFragment"
+        android:name="com.example.assignment3_tvseries.ui.movie_page.MovieFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_movie">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/MovieDetailedFragment"
-        android:name="com.example.assignment3_tvseries.MovieDetailedFragment"
+        android:name="com.example.assignment3_tvseries.ui.movie_detailed_page.MovieDetailedFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_movie_detailed">
 
