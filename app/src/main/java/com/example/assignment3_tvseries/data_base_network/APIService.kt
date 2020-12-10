@@ -7,6 +7,6 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface APIService {
-    @GET("random")
-    fun getJokeByCategory( @Query("category") category: String?): Call<MovieInfoModel>
+    @GET("nikoloz14/movies-db/db")
+    fun getMovies(): Call<MovieInfoModel>
 }

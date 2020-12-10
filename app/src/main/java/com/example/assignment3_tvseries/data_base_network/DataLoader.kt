@@ -11,18 +11,17 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object DataLoader {
     private val retrofit = Retrofit.Builder()
-        //.baseUrl(BASE_URL_JOKES)
+        .baseUrl("https://my-json-server.typicode.com/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
     private val service = retrofit.create(APIService::class.java)
 
 
-    fun getRequestJokeByCategory(
-        category: String?,
+    fun getRequestForMovies(
         callback: FutureCallbackMovieBridge
 
     ) {
-        val call = service.getJokeByCategory(category)
+        val call = service.getMovies()
         call.enqueue(object : Callback<MovieInfoModel> {
             override fun onFailure(call: Call<MovieInfoModel>, t: Throwable) {
                 callback.onFailure(t.message.toString())
