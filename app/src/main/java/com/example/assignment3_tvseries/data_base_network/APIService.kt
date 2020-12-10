@@ -7,6 +7,6 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface APIService {
-    @GET("nikoloz14/movies-db/db")
+    @GET("movies-db/db")
     fun getMovies(): Call<MovieInfoModel>
 }

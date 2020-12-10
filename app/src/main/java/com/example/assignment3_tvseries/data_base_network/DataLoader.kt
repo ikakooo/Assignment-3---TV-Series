@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object DataLoader {
     private val retrofit = Retrofit.Builder()
-        .baseUrl("https://my-json-server.typicode.com/")
+        .baseUrl("https://my-json-server.typicode.com/nikoloz14/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
     private val service = retrofit.create(APIService::class.java)
