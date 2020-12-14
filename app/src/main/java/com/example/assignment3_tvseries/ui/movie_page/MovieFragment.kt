@@ -16,39 +16,34 @@ import com.example.assignment3_tvseries.data_base_network.model.MovieInfoModel
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
 class MovieFragment : Fragment(R.layout.fragment_movie) {
+    private var topRatedMoviesList = mutableListOf<MovieInfoModel>()
+    private lateinit var topRatedAdapter: MoviesRecyclerviewAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         view.apply {
-            findViewById<TextView>(R.id.textview_first).apply {
-
-                DataLoader.getRequestForMovies(object :FutureCallbackMovieBridge{
-                    override fun onResponse(response: MovieInfoModel) {
-                        d("dsfsfdf",response.toString())
-                        text = response.toString()
-                    }
-
-                    override fun onFailure(error: String) {
-                        d("dsfsfdf",error.toString())
-                        text = error
-                    }
-
-                })
-
+            getRequestMovies()
+            findViewById<Button>(R.id.button_first).setOnClickListener {
+                findNavController().navigate(R.id.action_MovieFragment_to_MovieDetailedFragment)
             }
 
 
         }
-
-        view.findViewById<Button>(R.id.button_first).setOnClickListener {
-            findNavController().navigate(R.id.action_MovieFragment_to_MovieDetailedFragment)
-        }
     }
 
-    private fun getRequestMovies():String{
-        var data = "gdg  "
+    private fun View.getRequestMovies(){
+        DataLoader.getRequestForMovies(object :FutureCallbackMovieBridge{
+            override fun onResponse(response: MovieInfoModel) {
+                d("dsfsfdf",response.toString())
+                response.toString()
+            }
 
-        return data + "sffsfd"
+            override fun onFailure(error: String) {
+                d("dsfsfdf",error.toString())
+                error
+            }
+        })
+
     }
 }

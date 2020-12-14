@@ -29,9 +29,9 @@ class MoviesRecyclerviewAdapter(
 
         fun onBind() {
             model = MoviesList[adapterPosition]
-            itemView.findViewById<TextView>(R.id.title_TextView).text = model.movies[adapterPosition].title
+            itemView.findViewById<TextView>(R.id.movie_title_TextView).text = model.movies[adapterPosition].title
             Glide.with(itemView.context).load(  model.movies[0].imageUrl)
-                .into(itemView.findViewById(R.id.backgroundIMG))
+                .into(itemView.findViewById(R.id.movie_backgroundIMG))
             itemView.setOnClickListener {
                 detailedMovieListener.detailedViewClick(adapterPosition)
             }
