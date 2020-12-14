@@ -8,10 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.assignment3_tvseries.R
 import com.example.assignment3_tvseries.data_base_network.model.MovieInfoModel
+import com.example.assignment3_tvseries.data_base_network.model.Movy
 
 
 class MoviesRecyclerviewAdapter(
-    val MoviesList: MutableList<MovieInfoModel>,
+    val MoviesList: MutableList<Movy>,
     val detailedMovieListener: DetailedMovieListener
 ) :
     RecyclerView.Adapter<MoviesRecyclerviewAdapter.ViewHolder>() {
@@ -25,12 +26,12 @@ class MoviesRecyclerviewAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.onBind()
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        private lateinit var model: MovieInfoModel
+        private lateinit var model: Movy
 
         fun onBind() {
-            model = MoviesList[0]
-            itemView.findViewById<TextView>(R.id.movie_title_TextView).text = model.movies[adapterPosition].title
-            Glide.with(itemView.context).load(  model.movies[0].imageUrl)
+            model = MoviesList[adapterPosition]
+            itemView.findViewById<TextView>(R.id.movie_title_TextView).text = model.title
+            Glide.with(itemView.context).load(  model.imageUrl)
                 .into(itemView.findViewById(R.id.movie_backgroundIMG))
             itemView.setOnClickListener {
                 detailedMovieListener.detailedViewClick(adapterPosition)
