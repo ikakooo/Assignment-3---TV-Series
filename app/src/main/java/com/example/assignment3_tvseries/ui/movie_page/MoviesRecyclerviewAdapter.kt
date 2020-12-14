@@ -28,7 +28,7 @@ class MoviesRecyclerviewAdapter(
         private lateinit var model: MovieInfoModel
 
         fun onBind() {
-            model = MoviesList[adapterPosition]
+            model = MoviesList[0]
             itemView.findViewById<TextView>(R.id.movie_title_TextView).text = model.movies[adapterPosition].title
             Glide.with(itemView.context).load(  model.movies[0].imageUrl)
                 .into(itemView.findViewById(R.id.movie_backgroundIMG))
