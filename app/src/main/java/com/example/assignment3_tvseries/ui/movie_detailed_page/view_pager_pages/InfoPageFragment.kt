@@ -12,13 +12,11 @@ import com.example.assignment3_tvseries.data_base_network.DataLoader
 import com.example.assignment3_tvseries.data_base_network.FutureCallbackMovieBridge
 import com.example.assignment3_tvseries.data_base_network.model.MovieInfoModel
 
-class InfoPageFragment : Fragment(R.layout.fragment_info_page) {
-
+class InfoPageFragment(moviePositionID: Int) : Fragment(R.layout.fragment_info_page) {
+    private val movieID = moviePositionID
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val bundle = this.arguments
-        val movieID: Int = bundle?.getInt("positionAPTagID") ?: 1
-        Log.d("idTag", movieID.toString())
+
         view.apply {
             getRequestMovies(movieID)
         }

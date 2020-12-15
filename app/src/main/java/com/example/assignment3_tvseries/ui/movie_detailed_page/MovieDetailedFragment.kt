@@ -20,13 +20,15 @@ class MovieDetailedFragment : Fragment(R.layout.fragment_movie_detailed) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        val bundle = this.arguments
+        val movieID: Int = bundle?.getInt("positionAPTagID") ?: 1
+        Log.d("idTag", movieID.toString())
         view.apply {
                 ///findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
                 val viewPager = findViewById<ViewPager>(R.id.view_pager)
                 val tabLayout = findViewById<TabLayout>(R.id.tab_layout)
 
-                val adapter = activity?.supportFragmentManager?.let { MyViewPagerAdapter(it) }
+                val adapter = activity?.supportFragmentManager?.let { MyViewPagerAdapter(it,movieID) }
                 viewPager.adapter = adapter
 
                 tabLayout.setupWithViewPager(viewPager)
