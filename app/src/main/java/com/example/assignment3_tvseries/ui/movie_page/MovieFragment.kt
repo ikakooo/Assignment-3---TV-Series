@@ -1,6 +1,7 @@
 package com.example.assignment3_tvseries.ui.movie_page
 
 import android.os.Bundle
+import android.util.Log
 import android.util.Log.d
 import androidx.fragment.app.Fragment
 import android.view.View
@@ -26,8 +27,9 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
         view.apply {
             movieAdapter = MoviesRecyclerviewAdapter(moviesList, object : DetailedMovieListener {
                 override fun detailedViewClick(position: Int) {
+                    Log.d("positionAPTagTag", position.toString())
                     val bundle = Bundle()
-                    bundle.putInt("Position_ID", position)
+                    bundle.putInt("positionAPTagID", position)
                     findNavController().navigate(R.id.action_MovieFragment_to_MovieDetailedFragment,bundle)
                 }
             })

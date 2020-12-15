@@ -5,11 +5,11 @@
     android:layout_height="200dp">
 
     <ImageView
-        android:scaleType="centerCrop"
-        android:src="@mipmap/ic_launcher"
         android:id="@+id/movie_backgroundIMG"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher" />
 
     <TextView
         android:id="@+id/movie_title_TextView"

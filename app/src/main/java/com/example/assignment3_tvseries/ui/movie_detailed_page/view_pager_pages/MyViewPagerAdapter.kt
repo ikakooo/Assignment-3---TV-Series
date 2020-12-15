@@ -11,8 +11,8 @@ class MyViewPagerAdapter(fragmentManager: FragmentManager) : FragmentStatePagerA
 
     override fun getItem(position: Int): Fragment =
             when (position) {
-                0 -> FirstPageFragment()
-                else -> SecondPageFragment()
+                0 -> InfoPageFragment()
+                else -> CastPageFragment()
             }
 
     override fun getPageTitle(position: Int): CharSequence? =

@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.assignment3_tvseries.R
 
-class SecondPageFragment : Fragment(R.layout.fragment_cast_page) {
+class CastPageFragment : Fragment(R.layout.fragment_cast_page) {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         Log.d("fsdfsfsf", "onSaveInstanceState")

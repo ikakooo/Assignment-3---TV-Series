@@ -1,5 +1,6 @@
 package com.example.assignment3_tvseries.ui.movie_page
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,6 +35,7 @@ class MoviesRecyclerviewAdapter(
             Glide.with(itemView.context).load(  model.imageUrl)
                 .into(itemView.findViewById(R.id.movie_backgroundIMG))
             itemView.setOnClickListener {
+                Log.d("adapterPositionTagTag", adapterPosition.toString())
                 detailedMovieListener.detailedViewClick(adapterPosition)
             }
         }
