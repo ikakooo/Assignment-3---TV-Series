@@ -4,10 +4,10 @@ import android.os.Bundle
 import android.util.Log.d
 import androidx.fragment.app.Fragment
 import android.view.View
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.assignment3_tvseries.R
+import androidx.navigation.fragment.findNavController
 import com.example.assignment3_tvseries.data_base_network.DataLoader
 import com.example.assignment3_tvseries.data_base_network.FutureCallbackMovieBridge
 import com.example.assignment3_tvseries.data_base_network.model.MovieInfoModel

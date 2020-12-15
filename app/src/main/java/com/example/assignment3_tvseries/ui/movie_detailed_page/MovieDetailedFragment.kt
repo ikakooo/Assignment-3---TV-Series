@@ -22,7 +22,7 @@ class MovieDetailedFragment : Fragment(R.layout.fragment_movie_detailed) {
         super.onViewCreated(view, savedInstanceState)
 
         view.apply {
-                findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+                ///findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
                 val viewPager = findViewById<ViewPager>(R.id.view_pager)
                 val tabLayout = findViewById<TabLayout>(R.id.tab_layout)
 
