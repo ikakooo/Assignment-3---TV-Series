@@ -24,7 +24,6 @@ class MovieDetailedFragment : Fragment(R.layout.fragment_movie_detailed) {
         val movieID: Int = bundle?.getInt("positionAPTagID") ?: 1
         Log.d("idTag", movieID.toString())
         view.apply {
-                ///findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
                 val viewPager = findViewById<ViewPager>(R.id.view_pager)
                 val tabLayout = findViewById<TabLayout>(R.id.tab_layout)
 
@@ -33,22 +32,5 @@ class MovieDetailedFragment : Fragment(R.layout.fragment_movie_detailed) {
 
                 tabLayout.setupWithViewPager(viewPager)
         }
-       // getRequestMovies()
-    }
-
-
-    private fun getRequestMovies() {
-        DataLoader.getRequestForMovies(object : FutureCallbackMovieBridge {
-            override fun onResponse(response: MovieInfoModel) {
-                Log.d("wordTag", response.toString())
-//                moviesList.addAll(response.movies)
-//                movieAdapter.notifyDataSetChanged()
-            }
-
-            override fun onFailure(error: String) {
-                Log.d("wordTag", error)
-            }
-        })
-
     }
 }
